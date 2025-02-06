@@ -1,0 +1,30 @@
+class Smartphone:
+    def __init__(self, brand, model, battery_life):
+        self.brand = brand
+        self.model = model
+        self.battery_life = battery_life
+    
+    def make_call(self, number):
+        print(f"Calling {number}...")
+    
+    def check_battery(self):
+        print(f"Battery life is {self.battery_life}%")
+    
+class SmartphoneWithCamera(Smartphone):
+    def __init__(self, brand, model, battery_life, camera_quality):
+        super().__init__(brand, model, battery_life)  # Inherit attributes from Smartphone
+        self.camera_quality = camera_quality  # New attribute for camera quality
+    
+    def take_photo(self):
+        print(f"Taking a photo with {self.camera_quality} quality camera!")
+    
+
+phone = Smartphone("Apple", "iPhone 13", 85)
+phone.make_call("123-456-7890")
+phone.check_battery()
+
+
+camera_phone = SmartphoneWithCamera("Samsung", "Galaxy S21", 75, "108MP")
+camera_phone.make_call("987-654-3210")
+camera_phone.check_battery()
+camera_phone.take_photo()
